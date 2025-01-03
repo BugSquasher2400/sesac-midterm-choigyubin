@@ -1,6 +1,30 @@
+// 변수선언
+let todoArr;
+
+document.addEventListener("DOMContentLoaded", () => {
+  getTodos();
+});
+
 /* 1. https://jsonplaceholder.typicode.com/todos 로부터 데이터를 불러와서 추가해주는 함수 getTodos() 선언 */
 // getTodos()는 추후에 HTML DOM 내용이 완전히 로드되었을 때 실행되어야 합니다.
-async function getTodos() {}
+async function getTodos() {
+  try {
+    await axios({
+      method: "get",
+      url: "https://jsonplaceholder.typicode.com/todos",
+      data: {},
+    })
+      .then((res) => {
+        todoArr = res.data;
+        // initTodo();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } catch (err) {
+    alert("요청 오류:", err);
+  }
+}
 
 /* 
   2. 새로운 입력창의 Todo를 Todo 목록에 추가하고, 입력창을 초기화합니다.
@@ -21,3 +45,19 @@ function deleteTodo(item) {}
  - HTML 문서의 DOM 내용이 완전히 로드되었을 때 실행됩니다.
  - 따로 함수를 만들어도 좋고, 함수를 만들지 않아도 좋습니다.
 */
+
+function initTodo() {
+  for (let i = 0; i < 10; i++) {
+    let todo = `
+    <li class="item" >
+    <div>
+      <input type="checkbox" />
+      <p></p>
+      <button type="button"><i class="xi-close xi-2x"></i></button>
+    </div>
+  </li>`;
+
+    let todoTag = document.createElement(todo);
+    document.querySelector("main > .container > ul").append(todoTag);
+  }
+}

@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>최규빈</title>
     <link rel="stylesheet" href="./public/index.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+
+    <!-- js -->
+    <script src="./public/index.js"></script>
+
+    <!-- CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <header>
       <div class="logo"><img src="./public/codingon.png" alt="로고" /></div>
     </header>
     <main>
-      <div class="todoForm">
-        <form name="todoData">
+      <div class="todoBox">
+        <form class="todoForm" name="todoForm">
           <input type="text" placeholder="일정을 입력하세요" required />
           <button type="button">등록</button>
         </form>
@@ -20,39 +30,53 @@
 
       <div class="container">
         <ul>
-          <li class="item">
+          <li class="item" data-todoId="">
             <div>
               <input type="checkbox" />
               <p>오늘의 일정입니다</p>
-              <button type="button">X</button>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
             </div>
           </li>
-          <li class="item">
+          <li class="item" data-todoId="">
             <div>
               <input type="checkbox" />
               <p>오늘의 일정입니다</p>
-              <button type="button">X</button>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
             </div>
           </li>
-          <li class="item">
+          <li class="item" data-todoId="">
             <div>
               <input type="checkbox" />
               <p>오늘의 일정입니다</p>
-              <button type="button">X</button>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
             </div>
           </li>
-          <li class="item">
+          <li class="item" data-todoId="">
             <div>
               <input type="checkbox" />
               <p>오늘의 일정입니다</p>
-              <button type="button">X</button>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
             </div>
           </li>
-          <li class="item">
+          <li class="item" data-todoId="">
             <div>
               <input type="checkbox" />
               <p>오늘의 일정입니다</p>
-              <button type="button">X</button>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
+            </div>
+          </li>
+          <li class="item" data-todoId="">
+            <div>
+              <input type="checkbox" />
+              <p>오늘의 일정입니다</p>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
+            </div>
+          </li>
+          <li class="item" data-todoId="">
+            <div>
+              <input type="checkbox" />
+              <p>오늘의 일정입니다</p>
+              <button type="button"><i class="xi-close xi-2x"></i></button>
             </div>
           </li>
         </ul>

@@ -15,6 +15,10 @@ img {
   width: 100%;
 }
 
+li {
+  list-style: none;
+}
+
 header {
   width: 100%;
   height: 150px;
@@ -32,24 +36,87 @@ main {
   border: 1px solid #000;
 }
 
-main > .todoForm {
+main > .container {
+  margin: 40px 0px;
+}
+
+main > .todoBox {
   text-align: center;
+  margin: 30px 0px;
+}
+
+/* 입력폼 */
+main > .todoBox > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > .todoBox input {
+  width: 250px;
+  height: 40px;
+}
+
+main > .todoBox button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
 /* TODO 리스트 */
 main > .container .item > div {
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 50px;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 20px;
 }
 
-main > .container .item > div {
+main > .container .item > div > input[type="checkbox"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
 
-@media screen and (max-width: 540px) {
+main > .container .item > div > p {
 }
 
-@media screen and (max-width: 960px) {
+main > .container .item > div > button {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #ff8675;
+  border: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 540px) {
+  main > .container > ul {
+  }
+
+  main > .container > ul > .item {
+    display: inline-block;
+    width: 50%;
+    margin: 0px;
+  }
+
+  main > .container .item > div {
+    padding: 0px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  main > .container > ul {
+  }
+
+  main > .container > ul > .item {
+    display: inline-block;
+    width: 20%;
+    margin: 0px;
+  }
+
+  main > .container .item > div {
+    padding: 0px;
+  }
 }
