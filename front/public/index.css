@@ -1,0 +1,55 @@
+/* 가상 클래스 선택자 root의 색상들은 필수 사용요소가 아닙니다.
+색상은 자유롭게 구성해주세요. */
+:root {
+  --main-color: #04c82f;
+  --main-bg-color: #e5ffeb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 150px;
+  line-height: 150px;
+  border: 1px solid #000;
+}
+
+header > .logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+main > .todoForm {
+  text-align: center;
+}
+
+/* TODO 리스트 */
+main > .container .item > div {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+main > .container .item > div {
+}
+
+@media screen and (max-width: 540px) {
+}
+
+@media screen and (max-width: 960px) {
+}
