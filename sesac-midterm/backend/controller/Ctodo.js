@@ -6,7 +6,7 @@ exports.readAll = async (req, res) => {
 
   try {
     const result = await Todo.findAll({});
-    console.log("가져온값", result);
+    res.send(result);
   } catch (err) {
     console.log("err", err);
     res.status(500).send({ message: "Internal Server Error" });
@@ -26,7 +26,16 @@ exports.readOne = async (req, res) => {
     console.log("한개만 가져온값", result);
     // 존재하지 않는 값이면 404
     if (result === null) {
+      console.log("존재하지않는 ID!");
       res.status(404).send({ message: "Todo not found" });
+    } else {
+      res.send({
+        id: result.dataValues.id,
+        title: result.dataValues.title,
+        done: result.dataValues.done,
+        createdAt: result.dataValues.createdAt,
+        updatedAt: result.dataValues.updatedAt,
+      });
     }
   } catch (err) {
     console.log("서버오류!", err);
